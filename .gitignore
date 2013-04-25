@@ -3,3 +3,6 @@
 # Package Files #
 *.war
 *.ear
+/org.eclipse.recommenders.calls/nbproject/private/
+/org.eclipse.recommenders.calls/build/
+/org.eclipse.recommenders.calls/dist/
