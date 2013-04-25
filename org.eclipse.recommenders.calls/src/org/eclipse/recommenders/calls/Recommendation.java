@@ -27,13 +27,13 @@ public class Recommendation<T> {
         this.relevance = ensureIsInRange(relevance, 0, 1, "relevance '%f' must be in range [0..1]", relevance);
     }
 
-    T getProposal() {
+    public T getProposal() {
         return proposal;
-    };
+    }
 
-    double getRelevance() {
+    public double getRelevance() {
         return relevance;
-    };
+    }
 
     @Override
     public String toString() {
