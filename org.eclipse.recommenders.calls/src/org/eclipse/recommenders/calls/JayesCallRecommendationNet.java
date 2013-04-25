@@ -247,7 +247,7 @@ public class JayesCallRecommendationNet implements ICallRecommendationNet {
                 int indexForTrue = bayesNode.getOutcomeIndex(N_STATE_TRUE);
                 double[] probabilities = junctionTreeAlgorithm.getBeliefs(bayesNode);
                 double probability = probabilities[indexForTrue];
-                l.add(newRecommendation(method, probability));
+                l.add(Recommendation.<IMethodName, IMethodName>newRecommendation(method, probability));
             }
         }
         return filterSortAndChomp(l, filter, comparator, maxLength);
@@ -291,7 +291,7 @@ public class JayesCallRecommendationNet implements ICallRecommendationNet {
         for (String outcome : callgroupNode.getOutcomes()) {
             int probIndex = callgroupNode.getOutcomeIndex(outcome);
             double p = probs[probIndex];
-            l.add(newRecommendation(outcome, p));
+            l.add(Recommendation.<String, String>newRecommendation(outcome, p));
         }
         return filterSortAndChomp(l, filter, comparator, maxLength);
     }
